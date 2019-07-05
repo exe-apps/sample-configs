@@ -1,0 +1,19 @@
+ apiVersion: apps/v1beta1
+ kind: Deployment
+ metadata:
+   name: sample-cloud
+ spec:
+   replicas: 2
+   selector:
+    matchLabels:
+     app: sample-cloud-app
+   template:
+     metadata:
+       labels:
+         app: sample-cloud-app
+     spec:
+       containers:
+         - name: sample-cloud
+           image: cruzee/sample-cloud:initial
+           ports:
+             - containerPort: 3000
