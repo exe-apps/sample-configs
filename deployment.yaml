@@ -2,6 +2,8 @@
  kind: Deployment
  metadata:
    name: sample-cloud
+   labels:
+      app: sample-cloud-app
  spec:
    replicas: 2
    selector:
